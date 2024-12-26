@@ -1,0 +1,72 @@
+/* type selector */
+h1 {
+    color:blue;
+}
+
+/* class selector */
+.subsection {
+    color:aqua;
+}
+
+/* id selector */
+#test {
+    color:bisque;
+}
+
+/* grouping selectors (declarations are applied to both subsection and child)*/
+.subsection, .child {
+    background-color: blanchedalmond;
+}
+
+/* chaining selectors (only applies to elements that belong to >=2 selected classes) */
+.subsection.header {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.child#noted {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* In general, you can’t chain more than one type selector since an element can’t be two different types at once. 
+For example, chaining two type selectors like div and p would give us the selector divp, 
+which wouldn’t work since the selector would try to find a literal <divp> element, which doesn’t exist. */
+
+/* descendent combinator */
+.ancestor .parent .child {
+    color: brown;
+}
+
+/* There’s really no limit to how many combinators you can add to a rule, so .one .two .three .four would be totally valid.
+This would just select an element that has a class of four if it has an ancestor with a class of three, and if that ancestor has its own ancestor with a class of two, and so on. 
+You generally want to avoid trying to select elements that need this level of nesting, though, as it can get pretty confusing and long, and it can cause issues when it comes to specificity. */
+
+/* font-family can be a single value or a comma-separated list of values that determine what font an element uses. 
+Each font will fall into one of two categories, either a “font family name” like "Times New Roman" (we use quotes due to the whitespace between words) 
+or a “generic family name” like serif (generic family names never use quotes).
+
+If a browser cannot find or does not support the first font in a list, it will use the next one, then the next one and so on until it finds a supported and valid font. 
+This is why it’s best practice to include a list of values for this property, starting with the font you want to be used most and ending with a 
+generic font family as a fallback, e.g. font-family: "Times New Roman", serif;
+
+font-size will, as the property name suggests, set the size of the font. When giving a value to this property, the value should not contain any whitespace, 
+e.g. font-size: 22px has no space between “22” and “px”.
+
+font-weight affects the boldness of text, assuming the font supports the specified weight. This value can be a keyword, e.g. font-weight: bold, 
+or a number between 1 and 1000, e.g. font-weight: 700 (the equivalent of bold). Usually, the numeric values will be in increments of 100 up to 900, though this will depend on the font.
+
+text-align will align text horizontally within an element, and you can use the common keywords you may have come across 
+in word processors as the value for this property, e.g. text-align: center. */
+
+p {
+    color:blueviolet;
+    background-color: red;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: large;
+    font-weight: 200;
+    text-align: center;
+}
+
+img {
+    height:500px;
+    width:500px;
+}

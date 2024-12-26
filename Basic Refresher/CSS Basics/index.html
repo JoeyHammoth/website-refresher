@@ -1,0 +1,86 @@
+<!-- At the most basic level, CSS is made up of various rules. 
+ These rules are made up of a selector (more on this in a bit) and a semicolon-separated list of declarations, 
+ with each of those declarations being made up of a property–value pair. -->
+
+<!-- div.bold-text { -> selector
+    font-weight: 700; -> declaration
+ } -->
+
+<!-- A <div> is one of the basic HTML elements. It is an empty container. 
+In general, it is best to use other tags such as <h1> or <p> for content in your projects, 
+but as we learn more about CSS you’ll find that there are many cases where the thing you need is just a container for other elements. 
+Many of our exercises use plain<div>s for simplicity. Later lessons will go into much more depth about when it is appropriate to use the various HTML elements. -->
+
+<!-- The universal selector will select elements of any type, hence the name “universal”, and the syntax for it is a simple asterisk. 
+ In the example below, every element would have the color: purple; style applied to it. -->
+
+<!-- * {
+  color: purple;
+}
+ -->
+
+<!-- A type selector (or element selector) will select all elements of the given element type, and the syntax is just the name of the element. -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Am Adventure in CSS</title>
+
+        <!-- Adding CSS to HTML -->
+
+        <!-- External CSS is the most common method you will come across, and it involves creating a separate file 
+        for the CSS and linking it inside of an HTML’s opening and closing <head> tags with a void <link> element: -->
+
+        <!-- First, we add a void <link> element inside of the opening and closing <head> tags of the HTML file. 
+        The href attribute is the location of the CSS file, either an absolute URL or, what you’ll be utilizing, 
+        a URL relative to the location of the HTML file. In our example above, we are assuming both files are located in the same directory. 
+        The rel attribute is required, and it specifies the relationship between the HTML file and the linked file. -->
+        <link rel="stylesheet" href="style.css">
+
+        <!-- embedded css -->
+        <style>
+            .test1 {
+                color:aquamarine;
+                background-color: azure;
+                text-align: end;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Note the syntax for class selectors: a period immediately followed by the case-sensitive value of the class attribute. 
+        Classes aren’t required to be specific to a particular element, so you can use the same class on as many elements as you want. -->
+
+        <!-- Another thing you can do with the class attribute is to add multiple classes to a single element as a space-separated list, 
+        such as class="alert-text severe-alert". Since whitespace is used to separate class names like this, you should never use spaces for multi-worded names and should use a hyphen instead. -->
+
+        <!-- ID selectors are similar to class selectors. They select an element with the given ID, which is another attribute you place on an HTML element. 
+        The major difference between classes and IDs is that an element can only have one ID. It cannot be repeated on a single page and should not contain any whitespace: -->
+        <h1>Amazing Things you can do with CSS!</h1>
+        <div class="ancestor">
+            hello
+            <div class="parent">
+                goodbye
+                <div class="child">
+                    indulge
+                </div>
+            </div>
+        </div>
+        <div class="child">indulge again</div>
+        <div class="child" id="noted">this is targeted</div>
+        <div class="subsection header">we are one</div>
+        <div class="subsection footer">we are two</div>
+        <div id="test">test</div>
+
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem, 
+            assumenda officia nam illum ab quae voluptatem alias vel iusto 
+            amet laboriosam at veniam delectus laudantium rem reprehenderit in ipsa. Ratione.</p>
+
+        <img src="../HTML Basics/links-and-images/images/dog.jpg" alt="A picture of a dog">
+
+        <div class="test1">This is a test.</div>
+        <!-- inline css -->
+        <div style="color: wheat; background-color: black; font-family: 'Times New Roman', Times, serif; font-weight: 200;">
+            This is the final test</div>
+    </body>
+</html>
