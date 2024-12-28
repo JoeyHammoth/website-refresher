@@ -1,0 +1,21 @@
+h1 {
+    /* space between content and border */
+    padding: 10px;
+    /* space between border and other elements */
+    margin: 10px;
+    /* border outline */
+    border: 20px solid red;
+    background-color: aliceblue;
+} 
+
+* {
+    outline: 2px solid red;
+}
+
+p {
+    margin: 0px;
+}
+
+body {
+    margin: 0px;
+}
